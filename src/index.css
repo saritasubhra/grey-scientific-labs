@@ -1,0 +1,10 @@
+.applayout {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.mainlayout {
+  flex: 1 1 0%;
+}
