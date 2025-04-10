@@ -1,8 +1,10 @@
 import Spinner from "../components/Spinner";
+import { useCart } from "../contexts/CartContext";
 import useProductDetails from "../hooks/UseProductDetails";
 
 function ProductDetails() {
   const { product } = useProductDetails();
+  const { handleAddToCart } = useCart();
   if (!product) return <Spinner />;
 
   const {
@@ -31,7 +33,10 @@ function ProductDetails() {
 
         <p className="text-4xl font-bold text-green-600">${price}</p>
 
-        <button className="mt-4 bg-yellow-400 hover:bg-yellow-500 py-2 px-6 rounded-xl text-lg font-medium transition duration-300">
+        <button
+          onClick={() => handleAddToCart(product)}
+          className="mt-4 bg-yellow-400 hover:bg-yellow-500 py-2 px-6 rounded-xl text-lg font-medium transition duration-300"
+        >
           Add to Cart
         </button>
       </div>
