@@ -1,3 +1,4 @@
+import { RiDeleteBin6Line } from "react-icons/ri";
 import { useCart } from "../contexts/CartContext";
 
 function CartItem({ item }) {
@@ -20,14 +21,20 @@ function CartItem({ item }) {
       <div className="flex-1 space-y-1">
         <h2 className="text-md font-semibold text-gray-800">{title}</h2>
         <p className="text-sm text-gray-500">Price: ${price}</p>
-        <button onClick={() => removeFromCart(id)}>Delete</button>
+        <button onClick={() => removeFromCart(id)}>
+          <RiDeleteBin6Line size={20} fill="grey" />
+        </button>
       </div>
 
-      <div className="text-right">
+      <div className="text-right text-lg">
         <span>
-          <button onClick={() => handleDecrease(id)}>-</button>
-          <span className="px-2">{quantity}</span>
-          <button onClick={() => handleIncrease(id)}>+</button>
+          <button onClick={() => handleDecrease(id)} className="btnsm">
+            -
+          </button>
+          <span className="px-2 ">{quantity}</span>
+          <button onClick={() => handleIncrease(id)} className="btnsm">
+            +
+          </button>
         </span>
       </div>
     </div>

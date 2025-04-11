@@ -21,8 +21,10 @@ function Cart() {
         ))}
       </ul>
       <div className="flex justify-between p-4">
-        <span>Total :{total.toFixed(2)}</span>
-        <button onClick={clearCart}>Checkout</button>
+        <span className="text-2xl font-bold">Total :{total.toFixed(2)}</span>
+        <button onClick={clearCart} className="btn-teal">
+          Checkout
+        </button>
       </div>
     </div>
   );
